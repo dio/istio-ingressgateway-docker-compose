@@ -24,11 +24,9 @@ services:
       - router
     environment:
       - XDS_ROOT_CA=SYSTEM
-      - ENABLE_CA_SERVER=false
-      - FILE_MOUNTED_CERTS=true
+      # These POD_* are esthetic, but are useful for debugging.
       - POD_NAME=ingressgateway
       - POD_NAMESPACE=default
-      - ISTIO_META_CONFIG_NAMESPACE=default
       - |
         ISTIO_METAJSON_LABELS={"istio":"ingressgateway"}
     volumes:
