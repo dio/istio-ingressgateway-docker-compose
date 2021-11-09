@@ -17,6 +17,7 @@ services:
       - ./config-sources:/etc/istio/config-sources
 
   istio-ingressgateway:
+    container_name: istio-ingressgateway
     image: docker.io/istio/proxyv2:1.11.3
     command:
       - proxy
