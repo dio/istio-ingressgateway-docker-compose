@@ -33,4 +33,3 @@ services:
       - ./config/mesh-config.yaml:/etc/istio/config/mesh
     ports:
       - "8080:80"
-      - "15000:15000"
