@@ -10,4 +10,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: docker-compose up -d
-      - run: test.sh
+      - run: ./test.sh
