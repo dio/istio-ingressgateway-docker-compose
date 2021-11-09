@@ -8,11 +8,9 @@ services:
       - --meshConfig
       - /etc/istio/config/mesh
       - --registries=
-      - --log_output_level=debug
     environment:
       - ENABLE_CA_SERVER=false
       - FILE_MOUNTED_CERTS=false
-      - ISTIO_META_NAMESPACE=default
       - PILOT_CERT_PROVIDER=custom
     volumes:
       - ./config/mesh-config.yaml:/etc/istio/config/mesh
@@ -23,16 +21,15 @@ services:
     command:
       - proxy
       - router
-      - --proxyLogLevel=debug
     environment:
       - XDS_ROOT_CA=SYSTEM
       - ENABLE_CA_SERVER=false
       - FILE_MOUNTED_CERTS=true
-      - POD_NAME=router
+      - POD_NAME=ingressgateway
       - POD_NAMESPACE=default
       - ISTIO_META_CONFIG_NAMESPACE=default
       - |
-        ISTIO_METAJSON_LABELS={"istio": "ingressgateway", "app": "istio-ingressgateway", "api": "default"}
+        ISTIO_METAJSON_LABELS={"istio":"ingressgateway"}
     volumes:
       - ./config/mesh-config.yaml:/etc/istio/config/mesh
     ports:

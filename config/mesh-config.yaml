@@ -1,18 +1,12 @@
+# Global mesh config.
 
 enableAutoMtls: false
 accessLogFile: /dev/stdout
-discoverySelectors:
-  - matchLabels:
-      istio-discovery: enabled
 defaultConfig:
   discoveryAddress: pilot-discovery:15010
   controlPlaneAuthPolicy: NONE
-  terminationDrainDuration: 0s
+  terminationDrainDuration: 5s
   sds:
     enabled: false
-defaultServiceExportTo:
-  - "*"
-defaultVirtualServiceExportTo:
-  - "*"
 configSources:
   - address: fs:///etc/istio/config-sources

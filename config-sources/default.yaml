@@ -11,7 +11,7 @@ spec:
         name: http
         protocol: HTTP
       hosts:
-        - "httpbin.org"
+        - httpbin.org
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -19,7 +19,7 @@ metadata:
   name: httpbin
 spec:
   hosts:
-    - "httpbin.org"
+    - httpbin.org
   gateways:
     - httpbin-gateway
   http:
@@ -40,7 +40,7 @@ spec:
   exportTo:
     - "*"
   hosts:
-    - "httpbin.org"
+    - httpbin.org
   ports:
     - number: 80
       name: http
