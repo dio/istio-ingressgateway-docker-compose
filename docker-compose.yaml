@@ -24,6 +24,7 @@ services:
       - router
     environment:
       - XDS_ROOT_CA=SYSTEM
+      - FILE_MOUNTED_CERTS=true
       # These POD_* are esthetic, but are useful for debugging.
       - POD_NAME=ingressgateway
       - POD_NAMESPACE=default
